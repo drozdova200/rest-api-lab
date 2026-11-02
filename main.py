@@ -52,7 +52,6 @@ def create_station(station: StationCreate):
 # 4. DELETE /api/v1/stations/{station_id} — удаление объекта
 @app.delete("/api/v1/stations/{station_id}", status_code=200)
 def delete_station(station_id: int):
-    global stations_db
     for i, station in enumerate(stations_db):
         if station.id == station_id:
             stations_db.pop(i)
